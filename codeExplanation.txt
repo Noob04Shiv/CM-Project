@@ -1,0 +1,43 @@
+Functions:
+f(double x):
+    Description: Represents the function for which roots are to be found. Modify this function to suit the specific
+     equation you want to solve. 
+
+derivative(double x):
+    Description: Represents the derivative of the function used in the Newton-Raphson method. Adjust this function 
+    according to the derivative of your function.    
+    
+bisection(double a, double b, double eps):
+    Description: Implements the bisection method to find a root within the given range [a, b].
+    Steps:
+    Initialize variables a, b, and eps (epsilon, tolerance).
+    Iterate until the difference between b and a is less than eps.
+    Calculate c as the midpoint between a and b.
+    If f(c) is zero, a root is found, else adjust the range [a, b] based on the sign of f(c) * f(a).
+
+newtonRaphson(double x, double eps):
+    Description: Implements the Newton-Raphson method to find a root with an initial guess x.
+    Steps:
+    Initialize the initial guess x and eps (epsilon, tolerance).
+    Iterate until fabs(h) >= eps (where h is the function value divided by its derivative).
+    Update x using the formula x = x - h until convergence.
+
+secant(double x1, double x2, double eps):
+    Description: Implements the Secant method to find a root between two initial guesses x1 and x2.
+    Steps:
+    Initialize initial guesses x1, x2, and eps (epsilon, tolerance).
+    Iterate until fabs(f(x0)) >= eps where x0 is the root approximation using the secant method.
+    Update x0 based on the formula of the Secant method until convergence.
+
+Main Function (main()):
+    1 Read input values:
+        Read range [a, b].
+        Read initial guesses (x0, x1 or x for Newton-Raphson).
+        Read tolerance eps.
+        Read user's choice of root-finding method.
+    2 Based on the user's choice:
+        Call the respective root-finding function (bisection, newtonRaphson, secant).
+    3 Display the computed root.
+
+This algorithm offers a basic structure for implementing root-finding methods in C and allows users to choose a method 
+sbased on their preference and problem requirements.
